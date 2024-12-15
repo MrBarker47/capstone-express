@@ -1,36 +1,33 @@
 //express 
-const express = require("express");
-const mongoose = require("mongoose");
-import {config} from "dotenv"
-
-config();
+import express from "express";
+import mongoose from "mongoose";
 
 //PORT INFO
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = 3000;
 
-
-app.use(express.json());
-
-
+// app.use(express.json());
 
 //mongoose connection
-mongoose.connect(process.env.MONGO_DB)
-.then(() => {
-    console.log("Connect to database");
-})
-
+// mongoose.connect(process.env.Mongo_DB)
+// .then(() => {
+//     console.log("Database is connected");
+// })
 
 //HTTP METHODS
 app.get("/", (req, res) => {
     res.send('Hello, Jamaal Barker');
 })
 
-app.post('/api/products', (req, res) => {
-    console.log(req.body);
-    res.send(req.body);
-});
+// app.post('/api/products', (req, res) => {
+//     console.log(req.body);
+//     res.send(req.body);
+// });
+
+
 
 app.listen(PORT, () => {
-    console.log("Server Listening on PORT:, port");
+    console.log(`Server Listening on ${PORT}:, port`);
+    // console.log("Hello")
+   
 })
