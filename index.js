@@ -1,10 +1,13 @@
 //express 
 const express = require("express");
 const mongoose = require("mongoose");
+import {config} from "dotenv"
+
+config();
 
 //PORT INFO
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3001;
 
 
 app.use(express.json());
@@ -12,7 +15,7 @@ app.use(express.json());
 
 
 //mongoose connection
-mongoose.connect("mongodb+srv://MrBarker47:WfhpISelxhFNvZyD@mongopractice.mkbxl.mongodb.net/?retryWrites=true&w=majority&appName=MongoPractice")
+mongoose.connect(process.env.MONGO_DB)
 .then(() => {
     console.log("Connect to database");
 })
