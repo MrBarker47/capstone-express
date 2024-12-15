@@ -23,6 +23,11 @@ app.get("/", (req, res) => {
     res.send('Hello, Jamaal Barker');
 })
 
+app.post('/api/products', (req, res) => {
+    console.log(req.body);
+    res.send(req.body);
+});
+
 app.listen(PORT, () => {
     console.log("Server Listening on PORT:, port");
 })
