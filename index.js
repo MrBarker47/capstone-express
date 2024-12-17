@@ -2,9 +2,12 @@ import express from "express"
 import mongoose from "mongoose";
 import {config} from "dotenv"
 
+
 config();
 
 const app = express();
+
+
 
 const PORT = process.env.PORT || 5090;
 
@@ -24,3 +27,5 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log('Server is on!');
 }) 
+
+app.use(express.json())

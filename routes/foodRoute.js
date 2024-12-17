@@ -4,5 +4,13 @@ import {Food} from "../FoodData/food_Data"
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-    const food = await Food
-})
+    if(
+        !req.body.menu ||
+        !req.body.priceInput ||
+        !req.body.image 
+    ) {
+        return res.status
+    }
+});
+
+export default router;
