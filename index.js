@@ -1,7 +1,7 @@
-import express from "express"
+import express from "express";
 import mongoose from "mongoose";
-import {config} from "dotenv"
-
+import {config} from "dotenv";
+import foodRoute from "../routes/foodRoute"
 
 config();
 
@@ -15,7 +15,10 @@ const PORT = process.env.PORT || 5090;
 //Mongoose Connection
 mongoose.connect(process.env.Mongo_URL)
 .then(() => {
-    console.log("Connect to database");
+console.log("Connect to database")
+.catch((err) => {
+console.log(err)
+  })
 })
 
 //HTTP Methods
@@ -29,3 +32,4 @@ app.listen(PORT, () => {
 }) 
 
 app.use(express.json())
+app.use('/food', foodRoute)
