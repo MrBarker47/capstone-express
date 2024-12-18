@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import {config} from "dotenv";
-import foodRoute from "../routes/foodRoute"
+
 
 config();
 
@@ -32,4 +32,3 @@ app.listen(PORT, () => {
 }) 
 
 app.use(express.json())
-app.use('/food', foodRoute)

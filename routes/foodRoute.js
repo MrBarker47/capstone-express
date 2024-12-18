@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
         return response.status(200).send(food);
     } catch (err) {
         console.log(err.message)
-        response.status(500).send({message: error.message});
+        response.status(500).send({message: err.message});
 
     }
 });
