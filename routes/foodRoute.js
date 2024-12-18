@@ -31,4 +31,4 @@ router.get('/', async (req, res) => {
 
 
 
-export default Food;
+export default Food();

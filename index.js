@@ -9,14 +9,12 @@ const app = express();
 
 
 
-const PORT = process.env.PORT || 8090;
+const PORT = process.env.PORT || 4090;
 
 
 //Mongoose Connection
 mongoose.connect(process.env.Mongo_URL)
-.then(() => { console.log('Database is connect')
-.catch((error) => {
-  console.log(error)});
+.then(() => { console.log('Database is connect');
 })
 
 //HTTP Methods
