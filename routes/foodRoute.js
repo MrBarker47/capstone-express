@@ -25,9 +25,10 @@ router.get('/', async (req, res) => {
     } catch (err) {
         console.log(err.message)
         response.status(500).send({message: error.message});
+
     }
 });
 
 
 
-export default Food()
+export default Food;
