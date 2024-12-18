@@ -14,11 +14,9 @@ const PORT = process.env.PORT || 8090;
 
 //Mongoose Connection
 mongoose.connect(process.env.Mongo_URL)
-.then(() => {
-console.log("Connect to database")
-.catch((err) => {
-console.log(err)
-  })
+.then(() => { console.log('Database is connect')
+.catch((error) => {
+  console.log(error)});
 })
 
 //HTTP Methods
