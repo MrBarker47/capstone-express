@@ -1,34 +1,17 @@
 import express from "express"
-import { Food } from "../modules/food_Data"
+import { Food } from "../modules/food_Data.js"
 
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-    try {
-        if(
-            !req.body.menu ||
-            !req.body.pricePoint ||
-            !req.body.image
-        ) {
-            return response.status(400).send({
-                message: 'Required fields are missing'
-            })
-        }
-        const newFood = {
-            menu: request.body.name,
-            pricePoint: request.body.pricePoint,
-            image: request.body.image
-        };
-        const food = await Food.create(newFood);
-
-        return response.status(200).send(food);
+    try{
+        const food = await Food.find({});
+        res.status(200).json(food)
     } catch (err) {
-        console.log(err.message)
-        response.status(500).send({message: err.message});
-
+        res.status(500).json({message: err.message});
     }
 });
 
 
 
-export default Food();
+export default router;
