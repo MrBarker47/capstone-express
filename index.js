@@ -3,14 +3,9 @@ import mongoose from "mongoose";
 import {config} from "dotenv";
 import foodRoute from "./routes/foodRoute.js";
 
-
-
-
 config();
 
 const app = express();
-
-
 
 const PORT = process.env.PORT || 4090;
 
