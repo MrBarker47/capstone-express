@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import {config} from "dotenv";
-import foodRoute from "./routes/foodRoute.js";
+import foodRoute from "./routes/food_Route.js"
 
 config();
 
@@ -20,12 +20,11 @@ app.get('/', (req, res) => {
     res.send("Hello, Jamaal");
 })
  
-
+app.use(express.json());
+app.use('/food', foodRoute);
 
 app.listen(PORT, () => {
     console.log('Server is on!');
 }) 
 
 
-app.use(express.json());
-app.use('/food', foodRoute);
