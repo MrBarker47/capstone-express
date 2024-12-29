@@ -3,7 +3,7 @@ import { Food } from "../modules/food_Data.js"
 
 const router = express.Router();
 
-app.get('/', async (req, res) => {
+router.get('/', async (req, res) => {
     try{
         const food = await Food.find({});
         res.status(200).json(food)
@@ -13,7 +13,7 @@ app.get('/', async (req, res) => {
     
 });
 
-app.post('/', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const food = await Food.create();
         res.status(200).json(food);
@@ -21,9 +21,6 @@ app.post('/', async (req, res) => {
         res.status(400).json({message: err.message});
     };
 });
-
-
-
 
 
 
