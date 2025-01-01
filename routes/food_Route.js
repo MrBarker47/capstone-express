@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
         if(
             !req.body.name || 
             !req.body.pricePoint ||
-            !req.body.img
+            !req.body.image
         ) {
             return res.status(400).send({
                 message: 'Required fields are missing'
@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
         const newFood = {
             name: req.body.name,
             pricePoint: req.body.pricePoint,
-            imgage: req.body.imgage
+            image: req.body.image
         };
 
         const food = await Food.create(newFood);
@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
         
     } catch (error) {
         console.log(error.message);
-        response.status(500).send({ message: error.message});
+        res.status(500).send({ message: error.message});
     }
 });
 
