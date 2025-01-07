@@ -37,25 +37,33 @@ router.post('/', async (req, res) => {
 
 
 
-// router.get('/', async (req, res) => {
-//     try{
-//         const food = await Food.find({});
-//         res.status(200).json(food)
-//     } catch (err) {
-//         res.status(500).json({message: err.message});
-//     };
+router.get('/', async (req, res) => {
+    try{
+        const food = await Food.find({});
+        res.status(200).json(food)
+    } catch (err) {
+        res.status(500).json({message: err.message});
+    };
     
-// });
+});
 
-// router.post('/', async (req, res) => {
-//     try {
-//         const food = await Food.create();
-//         res.status(200).json(food);
-//     } catch (err) {
-//         res.status(400).json({message: err.message});
-//     };
-// });
+router.post('/', async (req, res) => {
+    try {
+        const food = await Food.create();
+        res.status(200).json(food);
+    } catch (err) {
+        res.status(400).json({message: err.message});
+    };
+});
 
+
+router.delete('/:id', async(req, res) =>{
+    try {
+
+    } catch (err) {
+        
+    }
+})
 
 
 export default router;
