@@ -3,11 +3,8 @@ import mongoose from "mongoose";
 
 const formSchema = mongoose.Schema(
     {
-        name: {
-            type: String, required: true
-        },
-        email: String, required: true
+       name:String,
+       email:String
     }
 );
-
-export const Form = mongoose.model('Form', formSchema);
+export default mongoose.model('form', formSchema)
