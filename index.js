@@ -8,6 +8,8 @@ import form from "./modules/form_Data.js"
 config();
 
 const app = express();
+// app.use(express.json());
+
 
 const PORT = process.env.PORT || 4090;
 
@@ -33,9 +35,9 @@ app.post('/form', async (req, res) => {
    let user = new form(req.body);
    let result = await user.save();
    res.send(result)
-
+   
 })
 
-app.use(express.json());
+
 app.use('/food', foodRoute);
 app.use('/form', form);
